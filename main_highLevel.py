@@ -743,22 +743,20 @@ class SuburbanSceneRenderer:
 
 def main() -> None:
     """Print usage instructions and launch the interactive renderer."""
-    instructions = [
-        "Starting 3D Suburban Scene Renderer (High-Level)...",
-        "",
-        "Controls (hold keys for continuous movement):",
-        "  W/S         Rotate around X axis",
-        "  A/D         Rotate around Y axis",
-        "  Q/E         Rotate around Z axis",
-        "  Up/Down     Zoom in / out",
-        "  Left/Right  Pan horizontally",
-        "  PgUp/PgDn   Pan vertically",
-        "  R           Reset view",
-        "  Escape      Exit",
-        "",
-        "Click on the graphics window to give it focus, then use the controls.",
-    ]
-    print("\n".join(instructions))
+    instructions = """Starting 3D Suburban Scene Renderer (High-Level)...
+        
+        Controls (hold keys for continuous movement):
+          W/S         Rotate around X axis
+          A/D         Rotate around Y axis
+          Q/E         Rotate around Z axis
+          Up/Down     Zoom in / out
+          Left/Right  Pan horizontally
+          PgUp/PgDn   Pan vertically
+          R           Reset view
+          Escape      Exit
+        
+        Click on the graphics window to give it focus, then use the controls."""
+    print(instructions)
 
     renderer = SuburbanSceneRenderer()
     renderer.run()

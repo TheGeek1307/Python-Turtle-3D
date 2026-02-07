@@ -170,7 +170,7 @@ def create_box_mesh(
     height: float,
     depth: float,
     color: str,
-) -> dict:
+) -> dict[str, list[tuple[float, float, float] | tuple[float, float]]]:
     """Return a wireframe box dict (vertices + edges) with bottom at base_y."""
     half_w = width / 2.0
     half_d = depth / 2.0
@@ -685,22 +685,21 @@ def run_animation_loop() -> None:
 
 def main() -> None:
     """Print usage instructions, build the scene, and start the renderer."""
-    instructions = [
-        "Starting 3D Suburban Scene Renderer (Low-Level)...",
-        "",
-        "Controls (hold keys for continuous movement):",
-        "  W/S         Rotate around X axis",
-        "  A/D         Rotate around Y axis",
-        "  Q/E         Rotate around Z axis",
-        "  Up/Down     Zoom in / out",
-        "  Left/Right  Pan horizontally",
-        "  PgUp/PgDn   Pan vertically",
-        "  R           Reset view",
-        "  Escape      Exit",
-        "",
-        "Click on the graphics window to give it focus, then use the controls.",
-    ]
-    print("\n".join(instructions))
+    instructions = """Starting 3D Suburban Scene Renderer (Low-Level)...
+
+        Controls (hold keys for continuous movement):
+          W/S         Rotate around X axis
+          A/D         Rotate around Y axis
+          Q/E         Rotate around Z axis
+          Up/Down     Zoom in / out
+          Left/Right  Pan horizontally
+          PgUp/PgDn   Pan vertically
+          R           Reset view
+          Escape      Exit
+
+        Click on the graphics window to give it focus, then use the controls."""
+    
+    print(instructions)
 
     setup_turtle_screen()
     build_full_scene()
